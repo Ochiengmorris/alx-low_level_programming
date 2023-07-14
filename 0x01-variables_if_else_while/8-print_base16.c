@@ -9,7 +9,7 @@ int main(void)
 {
 		char baze16;
 
-		for (baze16 = '0'; base16 <= '9'; baze16++)
+		for (baze16 = '0'; baze16 <= '9'; baze16++)
 		putchar(baze16);
 
 		for (baze16 = 'a'; baze16 <= 'f'; baze16++)
