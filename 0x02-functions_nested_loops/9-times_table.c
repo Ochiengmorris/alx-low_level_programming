@@ -6,7 +6,7 @@
  *return 0 success
  *
  */
-void time_table(void)
+void times_table(void)
 {
 int k, l, m;
 for (k = 0; k < 10; k++)
