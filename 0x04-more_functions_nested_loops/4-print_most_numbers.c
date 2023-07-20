@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main/h"
+#include "main.h"
 
 /**
  * print_most_numbers - Print numbers between 0 to 9
