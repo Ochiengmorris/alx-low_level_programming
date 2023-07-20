@@ -1,12 +1,18 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0 success.
+ * print_numbers - Print numbers between 0 to 9 incl.
+ *@b - integer
+ * Return: Void.
  */
-int main(void)
+void print_numbers(void)
 {
-    print_numbers();
-    return (0);
+	int b;
+
+	for (b = 0; b < 10; b++)
+	{
+		_putchar(b + '0');
+	}
+	_putchar('\n');
 }
