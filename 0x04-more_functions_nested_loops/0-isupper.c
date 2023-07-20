@@ -3,12 +3,12 @@
 
 /**
  * _isupper - Checks if paramter c represents an uppercase letter.
- * @d: representing a character
+ * @c: representing a character
  * Return: Always  success.
  */
-int _isupper(int d)
+int _isupper(int c)
 {
-	if (d >= 65 && d <= 90)
+	if (c >= 65 && c <= 90)
 	{
 		return (1);
 	}
