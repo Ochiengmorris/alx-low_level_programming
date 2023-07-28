@@ -4,22 +4,22 @@
 /**
  * _strncat -  function that concatenates two strings.
  * @src: string copy
- * @dest: string destination.
+ * @dest:string destination
  * @n: number.
  * Return: dest.
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int index strlen = strlen(dest);
+	int index = strlen(dest);
 	int a = 0;
 
 	while (a < n && *src)
 	{
-		dest[index +a] = *src;
+		dest[index + a] = *src;
 		src++;
 		a++;
 	}
-	dest[index +a] = '\0';
+	dest[index + a] = '\0';
 	return (dest);
 }
