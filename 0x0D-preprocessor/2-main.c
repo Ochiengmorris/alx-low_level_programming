@@ -1,9 +1,12 @@
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
 
-int main()
+/**
+ * main - preints the name of the file
+ *
+ * Return: Always 0 Success
+ */
+int main(void)
 {
-	_putchar(__FILE__);
-	_putchar('\n');
-	return 0;
+	printf("%s\n", __FILE__);
+	return (0);
 }
