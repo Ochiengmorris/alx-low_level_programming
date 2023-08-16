@@ -1,5 +1,3 @@
-#include <string.h>
-#include <stdlib.h>
 #include "3-calc.h"
 /**
  * get_op_func - func get op
@@ -26,5 +24,5 @@ int (*get_op_func(char *s))(int, int)
 		i++;
 	}
 
-	return (0);
+	return (NULL);
 }

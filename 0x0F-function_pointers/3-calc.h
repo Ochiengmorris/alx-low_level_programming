@@ -1,5 +1,9 @@
-#ifndef _HEADER_
-#ifdef _HEADER_
+#ifndef _HEADER_H
+#ifdef _HEADER_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * struct op - struct op.
@@ -19,4 +23,6 @@ int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
+
+
 #endif
