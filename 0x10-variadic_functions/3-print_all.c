@@ -3,21 +3,22 @@
 #include "variadic_functions.h"
 
 /**
-* print_all - prints all float strings chars etc
-*
-* @format: formatting of course
+* print_all - prints all string chars and ints etc
+* @format: formatting
 */
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	unsigned int a = 0, start = 0;
-	char *s;
+
+	unsigned int j = 0, start = 0;
+
+	char *p;
 
 	va_start(list, format);
 
-	while (format && format[a] != '\0')
+	while (format && format[j] != '\0')
 	{
-		switch (format[a])
+		switch (format[j])
 		{ case 'c':
 			switch (start)
 			{ case 1: printf(", "); }
@@ -40,11 +41,11 @@ void print_all(const char * const format, ...)
 			switch (start)
 			{ case 1: printf(", "); }
 			start = 1;
-			s = va_arg(list, char*);
-			if (s)
-			{ printf("%s", s);
+			p = va_arg(list, char*);
+			if (p)
+			{ printf("%s", p);
 			break; }
-			printf("%p", s);
+			printf("%p", p);
 			break; }
 		j++;
 	}
