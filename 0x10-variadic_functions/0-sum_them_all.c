@@ -28,7 +28,6 @@ int sum_them_all(const unsigned int n, ...)
 		{
 			int i = va_arg(val, const unsigned int);
 
-			printf("i : %d\n", i);
 			sum_all = sum_all + i;
 		}
 	}
