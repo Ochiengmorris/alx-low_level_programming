@@ -2,16 +2,16 @@
 
 /**
  * main - main func
- * @argc: ???
- * @argv: ???
+ * @argc: argument func
+ * @argv: arg
  *
  * Return: ???
  */
 int main(int argc, char *argv[])
 {
 	int arg1, arg2, result;
-	char o;
 	int (*func)(int, int);
+	char o;
 
 	if (argc != 4)
 	{
@@ -37,11 +37,9 @@ int main(int argc, char *argv[])
 		printf("Error Input\n");
 		exit(100);
 	}
-
 	result = func(arg1, arg2);
 
 	printf("%d\n", result);
 
 	return (0);
-}
 }
