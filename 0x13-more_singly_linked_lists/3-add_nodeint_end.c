@@ -1,6 +1,13 @@
 #include "lists.h"
 
-/***/
+/**
+ * add_nodeint_end - ...
+ *
+ * @head: ...
+ * @n: ...
+ *
+ * Return: address of new value.
+ */
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
