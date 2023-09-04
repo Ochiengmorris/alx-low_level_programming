@@ -1,7 +1,7 @@
 #include "main.h"
 
-void close_file(int fp);
 char *makenew_buffer(char *file);
+void close_file(int fp);
 
 /**
  * makenew_buffer - Allocates 1024 bytes for a buffer.
@@ -48,36 +48,35 @@ void close_file(int fp)
 /**
  * main - Copies the contents of a file to another file.
  *
- * @ac: The number of arguments supplied to the program.
- * @av: An array of pointers to the arguments.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
  * Return: 0 on success.
  *
  * Description: ...
  */
 
-int main(int ac, char *av[])
+int main(int argc, char *argv[])
 {
 	int fro, to, w, r;
 	char *buff;
 
-	if (ac != 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	buff = makenew_buffer(av[2]);
-	fro = open(av[1], O_RDONLY);
+	buff = makenew_buffer(argv[2]);
+	fro = open(argv[1], O_RDONLY);
 	r = read(fro, buff, 1024);
-	to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	while (r > 0)
-	{
+	do {
 		if (fro == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", av[1]);
+				"Error: Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
@@ -86,15 +85,15 @@ int main(int ac, char *av[])
 		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", av[2]);
+				"Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
 
 		r = read(fro, buff, 1024);
-		to = open(av[2], O_WRONLY | O_APPEND);
+		to = open(argv[2], O_WRONLY | O_APPEND);
 
-	}
+	} while (r > 0);
 
 	free(buff);
 	close_file(fro);
